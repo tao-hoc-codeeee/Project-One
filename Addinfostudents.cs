@@ -48,7 +48,7 @@ public class Addinfostudent : Studentsinfo
         Console.WriteLine("Birthday : {0}", students_birth);
         Console.WriteLine("Phonenumber : {0}", students_phonenumber);
         Console.WriteLine("Address : {0}", studentsaddress);
-
+        
     }
     //Kiem tra dinh dang email
     public int chekcmail(string mail)
