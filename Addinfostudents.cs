@@ -2,8 +2,8 @@ using System.Net.Mail;
 
 public class Addinfostudent : Studentsinfo
 {
-    public string genderfemale = "F";
-    public string gendermale = "M";
+    public string genderfemale = "Female";
+    public string gendermale = "Male";
     public int year = 0;
     public int day = 0;
     public int month = 0;
@@ -71,5 +71,37 @@ public class Addinfostudent : Studentsinfo
         {
             return gendermale;
         }
+    }
+    public bool checkDatetime(int year, int month, int day)
+    {
+        if(month == 2 && day >28)
+        {
+            return false;
+        }
+        if(month == 2 && year %4==0 && day <29)
+        {
+            return false;
+        }
+        if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month ==10 || month == 12 && day <31)
+        {
+            return false;
+        }
+        if (day > 32)
+        {
+            return false;
+        }
+        if (month >13)
+        {
+            return false;
+        }
+        if (month == 4 || month == 6 || month == 9 || month == 11 && day > 30)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        
     }
 }
