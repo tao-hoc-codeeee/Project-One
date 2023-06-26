@@ -60,6 +60,8 @@ public class Addinfostudent : Studentsinfo
         Console.WriteLine("Address : {0}", studentsaddress);
 
     }
+    
+    // ham check email
     public int chekcmail(string mail)
     {
         try{
@@ -71,6 +73,8 @@ public class Addinfostudent : Studentsinfo
             return 0;
         }
     }
+
+    // ham check gioi tinh
     public string Gender()
     {
         while(true)
@@ -88,6 +92,7 @@ public class Addinfostudent : Studentsinfo
         }
     }
 
+    // ham check so dien thoai
     public string Number_Phone()
     {
         while(true)
