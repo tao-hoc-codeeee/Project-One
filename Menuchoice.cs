@@ -5,6 +5,7 @@ public class MenuAdministrator
     {
         while(j!=0)
         {
+            Console.WriteLine("Student Mananagement");
             Console.WriteLine("1. Display all data");
             Console.WriteLine("2. Update data");
             Console.WriteLine("0. Exit");
@@ -16,8 +17,15 @@ public class MenuAdministrator
             }
         }
     }
-    public void MenuDisplay()
+    public void MenuUpdateStudent()
     {
-        
+        while(j!=0)
+        {
+            Console.WriteLine("1 . Delete student");
+            Console.WriteLine("2 . Change information");
+            Console.WriteLine("3 . Add new students");
+            Console.WriteLine("4 . Ban or Reverse");
+            Console.WriteLine("5 . Exit");
+        }
     }
 }
