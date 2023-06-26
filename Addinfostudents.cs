@@ -50,6 +50,7 @@ public class Addinfostudent : Studentsinfo
         Console.WriteLine("Address : {0}", studentsaddress);
 
     }
+    //Kiem tra dinh dang email
     public int chekcmail(string mail)
     {
         try{
@@ -61,6 +62,7 @@ public class Addinfostudent : Studentsinfo
             return 0;
         }
     }
+    // Tra ve gioi tinh de luu
     public string Gender(string gender)
     {
         if(gender == "F" && gender == "f")
@@ -72,6 +74,7 @@ public class Addinfostudent : Studentsinfo
             return gendermale;
         }
     }
+    //Kiem tra ngay thang co chuan khong
     public bool checkDatetime(int year, int month, int day)
     {
         if(month == 2 && day >28)
