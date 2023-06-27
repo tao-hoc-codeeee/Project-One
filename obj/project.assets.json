@@ -1706,19 +1706,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nhat\\.nuget\\packages\\": {}
+    "C:\\Users\\Quan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# base\\C# OOAD\\Project-One\\Project-One.csproj",
+      "projectUniqueName": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
       "projectName": "Project-One",
-      "projectPath": "D:\\C# base\\C# OOAD\\Project-One\\Project-One.csproj",
-      "packagesPath": "C:\\Users\\Nhat\\.nuget\\packages\\",
-      "outputPath": "D:\\C# base\\C# OOAD\\Project-One\\obj\\",
+      "projectPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
+      "packagesPath": "C:\\Users\\Quan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Quan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1765,7 +1765,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
