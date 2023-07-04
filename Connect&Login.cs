@@ -12,14 +12,8 @@ public class Connection
         return myconnection;
     }
 }
-// public class LoginCheck
-// {
-//     private string loginstring = "Completed";
-//     public string Login(string ID, string password)
-//     {
-//         return loginstring;
-//     }
-// }
+
+
 public class LoginUI
 {
     public int i = -1;
