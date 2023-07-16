@@ -9,7 +9,8 @@ public class MenuLoginActivity
             loginUI.Login();
             MenuAdministrator menuAdministrator = new MenuAdministrator();
             menuAdministrator.Mainmenu();
-            menuAdministrator.MenuUpdateStudent();
+            //menuAdministrator.MenuUpdateStudent();
+            Console.Clear();
         //}
     }
 }
@@ -20,7 +21,7 @@ public class MenuAdministrator
     {
         while(j!=0)
         {
-            
+            Console.Clear();
             Console.WriteLine();
             Console.WriteLine("Student Mananagement");
             Console.WriteLine("1. Display all data");
@@ -31,13 +32,16 @@ public class MenuAdministrator
             switch(j)
             {
                 case 1: break;
+                case 2: MenuUpdateStudent();
+                break;
             }
         }
     }
     public void MenuUpdateStudent()
     {
-        while(j!=0)
-        {
+        // while(j!=0)
+        // {
+            Console.Clear();
             Console.WriteLine();
             Console.WriteLine("1 . Delete student");
             Console.WriteLine("2 . Change information");
@@ -48,6 +52,6 @@ public class MenuAdministrator
             {
                 case 1: break;
             }
-        }
+        //}
     }
 }

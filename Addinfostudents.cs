@@ -46,8 +46,8 @@ public class Addinfostudent : Studentsinfo
         students_birth = new DateTime(year, month, day);
         
         //nhap email
-        Console.Write("Enter address:");
-        studentsaddress = Console.ReadLine()??"";
+        // Console.Write("Enter address:");
+        // studentsaddress = Console.ReadLine()??"";
 
         //hien thi lai thong tin cho nguoi dung xac minh lai 1 lam nua
         Console.WriteLine("Information :");
