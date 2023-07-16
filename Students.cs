@@ -11,12 +11,12 @@ interface Students
 //Class thong tin hoc sinh
 public class Studentsinfo : Students
 {
-    public required string name_of_student;
-    public required string students_mail;
-    public required string students_phonenumber;
-    public required string studentsno;
-    public required string studentsaddress;
-    public required string students_sex;
+    public  string name_of_student;
+    public  string students_mail;
+    public  string students_phonenumber;
+    public  string studentsno;
+    public  string studentsaddress;
+    public  string students_sex;
     public DateTime students_birth;
     public string Students_name
     {
