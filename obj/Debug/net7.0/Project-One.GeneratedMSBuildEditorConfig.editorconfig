@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Project_One
-<<<<<<< HEAD
-build_property.ProjectDir = d:\C# base\C# OOAD\Project-One\
-=======
-build_property.ProjectDir = c:\Users\Quan\OneDrive\Documents\GitHub\Project-One\
->>>>>>> 25e8f88e2e5b3ec97a041a092b316ea2347f2eb9
+build_property.ProjectDir = D:\C# base\C# OOAD\Project-One\

@@ -5,50 +5,34 @@ public class Addstudents : Studentsinfo
     public int year = 0;
     public int day = 0;
     public int month = 0;
-    public Addstudents()
-    {
-        name_of_student = "";
-        students_mail = "";
-        students_phonenumber = "";
-        students_sex = "";
-        studentsaddress = "";
-        studentsno = "";
-    }
+    // public Addstudents()
+    // {
+    //     name_of_student = "";
+    //     students_mail = "";
+    //     students_phonenumber = "";
+    //     students_sex = "";
+    //     studentsaddress = "";
+    //     studentsno = "";
+    // }
     public void Enterstudentinfo()
     {
-        while(true)
-        {
-        name_of_student = Entername();
-        students_mail = Enteremailaddress();
-        students_phonenumber = EnterphoneNumber();
-        students_sex = Entergender();
-        students_birth = Enterbirthdate();
-        studentsno = EnterStudentno();
+        Students_name = Entername();
+        Students_email = Enteremailaddress();
+        Students_phone = EnterphoneNumber();
+        Students_gender = Entergender();
+        Students_birthday = Enterbirthdate();
+        Students_no = EnterStudentno();
         Console.Write("Are you sure?(Enter Y or N):");
         string a = Console.ReadLine()??"".ToUpper();
         if(a == "Y")
         {
             Console.WriteLine("Complete");
-            //var Data = Info(studentsno,name_of_student, students_mail, students_phonenumber, students_birth);
+            // Console.WriteLine("Name :"+name_of_student);
+            // Console.WriteLine("Gender :"+students_sex);
+            // Console.WriteLine("Phone :"+students_phonenumber);
+            // Console.WriteLine("UID :"+studentsno);
+            // Console.WriteLine("Birthday:"+students_birth);
         }
-        else
-        {
-            break;
-        }
-        }
-    }
-    public static DataTable Info(string uid, string name, string email, string phone,string gender,DateTime birth)
-    {
-        //Them thong tin vao bang
-        var table = new DataTable();
-        table.Columns.Add("Uid", typeof(string));
-        table.Columns.Add("Name", typeof(string));
-        table.Columns.Add("Email", typeof(string));
-        table.Columns.Add("Phonenumber", typeof(string));
-        table.Columns.Add("Gender", typeof(string));
-        table.Columns.Add("Birthday", typeof(DateTime));
-        table.Rows.Add(uid, name, email, phone, gender, birth);
-        return table;
     }
     public string Entername()
     {
@@ -60,7 +44,7 @@ public class Addstudents : Studentsinfo
     public string ReStudents_no()
     {
         Random a = new Random();
-        int number = a.Next(01,99);
+        int number = a.Next(10,99);
         return number.ToString();
     }
     public string EnterStudentno()
