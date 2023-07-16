@@ -75,7 +75,8 @@ public class Addstudents : Studentsinfo
         //Dien dia chi email
         Console.Write("Enter email_address:");
         string email = Console.ReadLine()??"";
-        int i = chekcmail(email); // check email
+        int i = chekcmail(email);
+         // check email
         if(i!=1)
         {
             Console.WriteLine("Wrong email format");

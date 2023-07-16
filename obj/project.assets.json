@@ -59,6 +59,19 @@
           }
         }
       },
+      "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -147,6 +160,18 @@
           }
         }
       },
+      "NStack.Core/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NStack.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -167,6 +192,22 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.CodeDom/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Configuration.ConfigurationManager/4.4.1": {
@@ -237,6 +278,31 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Management/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Reflection/4.3.0": {
@@ -487,6 +553,15 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -506,6 +581,35 @@
           "runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Terminal.Gui/1.12.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
+          "NStack.Core": "1.0.7",
+          "System.Management": "7.0.1"
+        },
+        "compile": {
+          "lib/net7.0/Terminal.Gui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Terminal.Gui.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/net7.0/fr-FR/Terminal.Gui.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net7.0/ja-JP/Terminal.Gui.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net7.0/pt-PT/Terminal.Gui.resources.dll": {
+            "locale": "pt-PT"
           }
         }
       }
@@ -598,6 +702,26 @@
         "lib/netstandard2.1/K4os.Hash.xxHash.xml"
       ]
     },
+    "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+      "sha512": "jek4XYaQ/PGUwDKKhwR8K47Uh1189PFzMeLqO83mXrXQVIpARZCcfuDedH50YDTepBkfijCZN5U/vZi++erxtg==",
+      "type": "package",
+      "path": "microsoft.dotnet.platformabstractions/3.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.xml",
+        "microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
+        "microsoft.dotnet.platformabstractions.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -688,6 +812,20 @@
         "runtimes/win-x64/native/krbcc64.dll"
       ]
     },
+    "NStack.Core/1.0.7": {
+      "sha512": "eqvSscta9zPXMOLRDdYf/6FloygLC9ejZlGoLiejn9XZHxVuGYnSoPzb5YBrgyMih/0yfVejreRmJTUQ64sYew==",
+      "type": "package",
+      "path": "nstack.core/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/NStack.dll",
+        "logo48.png",
+        "nstack.core.1.0.7.nupkg.sha512",
+        "nstack.core.nuspec"
+      ]
+    },
     "Portable.BouncyCastle/1.9.0": {
       "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "type": "package",
@@ -732,6 +870,33 @@
         "system.buffers.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.CodeDom/7.0.0": {
+      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "type": "package",
+      "path": "system.codedom/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
+        "lib/net6.0/System.CodeDom.dll",
+        "lib/net6.0/System.CodeDom.xml",
+        "lib/net7.0/System.CodeDom.dll",
+        "lib/net7.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.7.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Configuration.ConfigurationManager/4.4.1": {
@@ -897,6 +1062,34 @@
         "lib/netstandard2.0/System.IO.Pipelines.xml",
         "system.io.pipelines.6.0.3.nupkg.sha512",
         "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Management/7.0.1": {
+      "sha512": "pHg4hGr/dn5wYdJ+kolMY4gkCIzFDRj/HFqoPq7e5h7OGii6BCBmS2/+ysC2SSoB5WvIDS29DMM5DowxxSY/oA==",
+      "type": "package",
+      "path": "system.management/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Management.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Management.dll",
+        "lib/net6.0/System.Management.xml",
+        "lib/net7.0/System.Management.dll",
+        "lib/net7.0/System.Management.xml",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net6.0/System.Management.dll",
+        "runtimes/win/lib/net6.0/System.Management.xml",
+        "runtimes/win/lib/net7.0/System.Management.dll",
+        "runtimes/win/lib/net7.0/System.Management.xml",
+        "system.management.7.0.1.nupkg.sha512",
+        "system.management.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -1678,6 +1871,50 @@
         "version.txt"
       ]
     },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Windows.Extensions/4.7.0": {
       "sha512": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "type": "package",
@@ -1698,27 +1935,56 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Terminal.Gui/1.12.1": {
+      "sha512": "zSjaCmD1XJcZXhfMTCz/TTT6TmjIy07rMcJYB2bpSlHvX7NZwWNr4xctCy8e5Q8LaWQ7Fpnh7HDnE8VMx+1rUg==",
+      "type": "package",
+      "path": "terminal.gui/1.12.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net472/Terminal.Gui.dll",
+        "lib/net472/Terminal.Gui.xml",
+        "lib/net472/fr-FR/Terminal.Gui.resources.dll",
+        "lib/net472/ja-JP/Terminal.Gui.resources.dll",
+        "lib/net472/pt-PT/Terminal.Gui.resources.dll",
+        "lib/net7.0/Terminal.Gui.dll",
+        "lib/net7.0/Terminal.Gui.xml",
+        "lib/net7.0/fr-FR/Terminal.Gui.resources.dll",
+        "lib/net7.0/ja-JP/Terminal.Gui.resources.dll",
+        "lib/net7.0/pt-PT/Terminal.Gui.resources.dll",
+        "lib/netstandard2.1/Terminal.Gui.dll",
+        "lib/netstandard2.1/Terminal.Gui.xml",
+        "lib/netstandard2.1/fr-FR/Terminal.Gui.resources.dll",
+        "lib/netstandard2.1/ja-JP/Terminal.Gui.resources.dll",
+        "lib/netstandard2.1/pt-PT/Terminal.Gui.resources.dll",
+        "logo.png",
+        "terminal.gui.1.12.1.nupkg.sha512",
+        "terminal.gui.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "MySql.Data >= 8.0.33"
+      "MySql.Data >= 8.0.33",
+      "Terminal.Gui >= 1.12.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nhat\\.nuget\\packages\\": {}
+    "C:\\Users\\Quan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# base\\C# OOAD\\Project-One\\Project-One.csproj",
+      "projectUniqueName": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
       "projectName": "Project-One",
-      "projectPath": "D:\\C# base\\C# OOAD\\Project-One\\Project-One.csproj",
-      "packagesPath": "C:\\Users\\Nhat\\.nuget\\packages\\",
-      "outputPath": "D:\\C# base\\C# OOAD\\Project-One\\obj\\",
+      "projectPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
+      "packagesPath": "C:\\Users\\Quan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Quan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1747,6 +2013,10 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.33, )"
+          },
+          "Terminal.Gui": {
+            "target": "Package",
+            "version": "[1.12.1, )"
           }
         },
         "imports": [
@@ -1765,7 +2035,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
