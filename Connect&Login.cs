@@ -17,15 +17,36 @@ public class Connection
 public class LoginUI
 {
     public int i = -1;
-    public string pass ="";
-    public string? ID; 
+    public string pass = "";
+    public string? ID;
     public void Login()
     {
+        // đoạn này sẽ xóa sau khi xong các hàm bên trong 
         Console.WriteLine("\t\t\t\tLogin\t\t\t\t");
         Console.Write("Enter your ID :");
-        ID = Console.ReadLine()??"";
+        ID = Console.ReadLine() ?? "";
         Console.Write("Enter your password :");
         string password = ReadPassword();
+
+        //Đăng nhập + xác minh tài khoản để sau dùng h xài cái trên cho tiện
+        // do
+        // {
+        //     Console.WriteLine("\t\t\t\tLogin\t\t\t\t");
+        //     Console.Write("Enter your ID :");
+        //     ID = Console.ReadLine() ?? "";
+        //     Console.Write("Enter your password :");
+        //     string password = ReadPassword();
+
+        //     if(AuthenticateUser(ID,password))
+        //     {
+        //         Console.WriteLine("Login Succsesfull!");
+        //         Console.ReadKey();
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Error ID or Password!");
+        //     }
+        // }while(AuthenticateUser(ID,password));
     }
 
     static string ReadPassword()
@@ -60,21 +81,22 @@ public class LoginUI
         return password;
     }
 
+    // hàm xác thực thông tin người dùng dựa vào csdl
     static bool AuthenticateUser(string username, string password)
     {
-       
-        MySqlConnection connection = GetConnection(); 
+
+        MySqlConnection connection = Connection.GetConnection();
         string query = $"SELECT COUNT(*) FROM students WHERE student_no = @username AND password = @password";
         using (var command = new MySqlCommand(query, connection))
         {
             command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@password", password);
-            
+
             int count = Convert.ToInt32(command.ExecuteScalar());
 
             return count > 0;
         }
-    
-        
+
+        // count lớn hơn 0 trả về true = 0 trả về false.
     }
 }
