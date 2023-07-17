@@ -59,4 +59,22 @@ public class LoginUI
         Console.WriteLine(); // Xuống dòng sau khi người dùng nhấn Enter
         return password;
     }
+
+    static bool AuthenticateUser(string username, string password)
+    {
+       
+        MySqlConnection connection = GetConnection(); 
+        string query = $"SELECT COUNT(*) FROM students WHERE student_no = @username AND password = @password";
+        using (var command = new MySqlCommand(query, connection))
+        {
+            command.Parameters.AddWithValue("@username", username);
+            command.Parameters.AddWithValue("@password", password);
+            
+            int count = Convert.ToInt32(command.ExecuteScalar());
+
+            return count > 0;
+        }
+    
+        
+    }
 }
