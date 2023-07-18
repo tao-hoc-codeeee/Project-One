@@ -5,12 +5,12 @@ public class MenuLoginActivity
     {
         // while(j!=0)
         // {
-            LoginUI loginUI = new LoginUI();
-            loginUI.Login();
-            MenuAdministrator menuAdministrator = new MenuAdministrator();
-            menuAdministrator.Mainmenu();
-            //menuAdministrator.MenuUpdateStudent();
-            //Console.Clear();
+        LoginUI loginUI = new LoginUI();
+        loginUI.Login();
+        MenuAdministrator menuAdministrator = new MenuAdministrator();
+        menuAdministrator.Mainmenu();
+        //menuAdministrator.MenuUpdateStudent();
+        //Console.Clear();
         //}
     }
 }
@@ -20,43 +20,62 @@ public class MenuAdministrator
     public Addstudents addstudents = new Addstudents();
     public void Mainmenu()
     {
-        // while(j!=0)
-        // {
+        do
+        {
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("Student Mananagement");
-            Console.WriteLine("1. Display all data");
-            Console.WriteLine("2. Update data");
-            Console.WriteLine("0. Exit");
-            Console.Write("   #Choice :");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("-------------------Student Mananagement-------------------");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("1. Display all data.");
+            Console.WriteLine("2. Update data.");
+            Console.WriteLine("0. Exit.");
+            Console.WriteLine("==========================================================");
+            Console.Write("Your Choice: ");
             j = Convert.ToInt32(Console.ReadLine());
-            switch(j)
+            switch (j)
             {
-                case 1: break;
-                case 2: MenuUpdateStudent();
-                break;
+                case 1:
+                    break;
+                case 2:
+                    MenuUpdateStudent();
+                    break;
+                default:
+                    Console.WriteLine("Please re-enter"); Console.ReadKey();
+                    break;
             }
-        //}
+        } while (j != 0);
     }
     public void MenuUpdateStudent()
     {
- 
-        // while(j!=0)
-        // {
+
+        do
+        {
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("1 . Delete student");
-            Console.WriteLine("2 . Change information");
-            Console.WriteLine("3 . Add new students");
-            Console.WriteLine("4 . Ban or Reverse");
-            Console.WriteLine("5 . Exit");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("----------------------Update Student----------------------");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("1 . Delete student.");
+            Console.WriteLine("2 . Change information.");
+            Console.WriteLine("3 . Add new students.");
+            Console.WriteLine("4 . Ban or Reverse.");
+            Console.WriteLine("5 . Back.");
+            Console.WriteLine("==========================================================");
+            Console.Write("Your Choice: ");
             j = Convert.ToInt32(Console.ReadLine());
-            switch(j)
+            switch (j)
             {
-                case 1: break;
-                case 3: addstudents.Enterstudentinfo();
-                break;
+                case 1:
+                    break;
+                case 3:
+                    addstudents.Enterstudentinfo();
+                    break;
+                default:
+                    Console.WriteLine("Please re-enter"); Console.ReadKey();
+                    break;
             }
-        //}
+        } while (j != 0);
     }
+
 }

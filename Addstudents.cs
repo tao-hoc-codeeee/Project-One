@@ -16,6 +16,11 @@ public class Addstudents : Studentsinfo
     // }
     public void Enterstudentinfo()
     {
+        Console.Clear();
+        Console.WriteLine();
+        Console.WriteLine("==========================================================");
+        Console.WriteLine("----------------------Add New Student---------------------");
+        Console.WriteLine("==========================================================");
         Students_name = Entername();
         Students_email = Enteremailaddress();
         Students_phone = EnterphoneNumber();
@@ -23,8 +28,8 @@ public class Addstudents : Studentsinfo
         Students_birthday = Enterbirthdate();
         Students_no = EnterStudentno();
         Console.Write("Are you sure?(Enter Y or N):");
-        string a = Console.ReadLine()??"".ToUpper();
-        if(a == "Y")
+        string a = Console.ReadLine() ?? "".ToUpper();
+        if (a == "Y")
         {
             Console.WriteLine("Complete");
             // Console.WriteLine("Name :"+name_of_student);
@@ -37,31 +42,31 @@ public class Addstudents : Studentsinfo
     public string Entername()
     {
         //Them ten hoc sinh
-        Console.WriteLine("Enter name:");
-        string name = Console.ReadLine()??"";
+        Console.Write("Enter name:");
+        string name = Console.ReadLine() ?? "";
         return name;
     }
     public string ReStudents_no()
     {
         Random a = new Random();
-        int number = a.Next(10,99);
+        int number = a.Next(10, 99);
         return number.ToString();
     }
     public string EnterStudentno()
     {
         //tao uid hoc sinh
         string no = ReStudents_no();
-        string id = no+Students_phone;
+        string id = no + Students_phone;
         return id;
     }
     public string Enteremailaddress()
     {
         //Dien dia chi email
         Console.Write("Enter email_address:");
-        string email = Console.ReadLine()??"";
+        string email = Console.ReadLine() ?? "";
         int i = chekcmail(email);
-         // check email
-        if(i!=1)
+        // check email
+        if (i != 1)
         {
             Console.WriteLine("Wrong email format");
         }
@@ -70,7 +75,8 @@ public class Addstudents : Studentsinfo
     //Kiem tra dinh dang email
     public int chekcmail(string mail)
     {
-        try{
+        try
+        {
             MailAddress m = new MailAddress(mail);
             return 1;
         }
@@ -83,8 +89,8 @@ public class Addstudents : Studentsinfo
     {
         //dien so dien thoai hs
         Console.Write("Enter phonenumber:");
-        string Phonenumber = Console.ReadLine()??"";
-        while(Phonenumber.Length !=10)
+        string Phonenumber = Console.ReadLine() ?? "";
+        while (Phonenumber.Length != 10)
         {
             Console.WriteLine("Invalid phone number format. Please enter again!");
         }
@@ -94,12 +100,12 @@ public class Addstudents : Studentsinfo
     {
         //dien gioi tinh
         Console.Write("Enter gender (enter F or M):");
-            string gender = Console.ReadLine()??"".ToUpper();
-            if(gender != "F" || gender != "M")
-            {
-                Console.WriteLine("Invalid gender. Please re-enter.");
-            }
-            return gender;
+        string gender = Console.ReadLine() ?? "".ToUpper();
+        if (gender != "F" || gender != "M")
+        {
+            Console.WriteLine("Invalid gender. Please re-enter.");
+        }
+        return gender;
     }
     public DateTime Enterbirthdate()
     {
