@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace Delete_Students
 {
-    public class DeteleStudent
+    public class DeleteStudent
     {
         public void Delete_Student()
         {
