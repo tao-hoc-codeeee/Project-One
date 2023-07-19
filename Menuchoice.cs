@@ -1,3 +1,6 @@
+using Delete_Students;
+
+
 public class MenuLoginActivity
 {
     public int j = -1;
@@ -14,6 +17,7 @@ public class MenuLoginActivity
         //}
     }
 }
+
 public class MenuAdministrator
 {
     public int j = -1;
@@ -67,6 +71,8 @@ public class MenuAdministrator
             switch (j)
             {
                 case 1:
+                    DeleteStudent deleteStudent = new DeleteStudent();  // Tạo đối tượng từ class DeleteStudent trong namespace Delete_Students
+                    deleteStudent.Delete_Student();  // Gọi hàm Delete_Student từ đối tượng deleteStudent
                     break;
                 case 3:
                     addstudents.Enterstudentinfo();

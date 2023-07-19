@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Project_One
+namespace Delete_Students
 {
     public class DeteleStudent
     {
