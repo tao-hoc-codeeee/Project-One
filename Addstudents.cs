@@ -1,5 +1,9 @@
+using System;
 using System.Data;
 using System.Net.Mail;
+using System.Text;
+using MySql.Data.MySqlClient;
+
 public class Addstudents : Studentsinfo
 {
     public int year = 0;
@@ -116,5 +120,36 @@ public class Addstudents : Studentsinfo
         day = Convert.ToInt32(Console.ReadLine());
         month = Convert.ToInt32(Console.ReadLine());
         return a = new DateTime(year, month, day);
+    }
+
+
+    // thêm dữ liệu vào csdl
+    public static void Add_Student(string StudentNo, string Passwrod, string StudentName, string Gender, string PhoneNumber, string Email, DateTime BrithDate, string Address)
+    {
+        Console.OutputEncoding = Encoding.Unicode;
+        Console.InputEncoding = Encoding.Unicode;
+
+        // Kết nối đến cơ sở dữ liệu
+        MySqlConnection connection = Connection.GetConnection();
+
+        // Tạo command để thực thi thủ tục lưu trữ
+        string StoredProcedure = "sp_AddStudent"; // ghi tên procedure ở đây
+        using(MySqlCommand command = new MySqlCommand(StoredProcedure,connection))
+        {
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("",StudentNo);
+            command.Parameters.AddWithValue("",Passwrod);
+            command.Parameters.AddWithValue("",StudentName);
+            command.Parameters.AddWithValue("",Gender);
+            command.Parameters.AddWithValue("",PhoneNumber);
+            command.Parameters.AddWithValue("",Email);
+            command.Parameters.AddWithValue("",BrithDate);
+            command.Parameters.AddWithValue("",Address);
+
+
+            // Thực thi thủ tục lưu trữ
+            command.ExecuteNonQuery();
+            Console.WriteLine("successfully!");
+        }
     }
 }
