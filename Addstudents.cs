@@ -50,7 +50,7 @@ public class Addstudents : Studentsinfo
     public string EnterStudentno()
     {
         //tao uid hoc sinh
-        string no = ReStudents_no();
+        string no = ReStudents_no(); 
         string id = no+Students_phone;
         return id;
     }
