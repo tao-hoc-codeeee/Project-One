@@ -17,7 +17,7 @@ namespace Delete_Students
             Console.WriteLine("==========================================================");
             Console.Write("Enter Student No: ");
             string studentNo = Console.ReadLine() ?? "".TrimEnd(' ');
-            
+
         }
 
         //Hàm lấy id của student trong mysql dựa vào student No 
@@ -34,7 +34,7 @@ namespace Delete_Students
                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("", student_no); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
-                command.Parameters.Add("", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+                command.Parameters.Add("", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;  // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
                 command.ExecuteNonQuery();
 
                 if (command.Parameters[""].Value != DBNull.Value) // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
@@ -45,6 +45,21 @@ namespace Delete_Students
                 return StudentId;
             }
         }
+
+        static bool AuthenticateStudent(string studentNo) // tìm kiếm xem mã student no đã nhập có tồn tại hay không
+        {
+            MySqlConnection connection = Connection.GetConnection();
+            string StoredProcedure = ""; //StoredProcedure tìm kiếm student no có tồn tại hay không 
+            using (var command = new MySqlCommand(StoredProcedure, connection))
+            {
+                command.Parameters.AddWithValue("",studentNo);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
+
     }
 
 }

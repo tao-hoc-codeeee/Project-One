@@ -86,8 +86,8 @@ public class LoginUI
     {
 
         MySqlConnection connection = Connection.GetConnection();
-        string query = $"SELECT COUNT(*) FROM students WHERE student_no = @username AND password = @password";
-        using (var command = new MySqlCommand(query, connection))
+        string StoredProcedure = $"SELECT COUNT(*) FROM students WHERE student_no = @username AND password = @password";// sau sẽ đổi thành StoredProcedure
+        using (var command = new MySqlCommand(StoredProcedure, connection))
         {
             command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@password", password);
