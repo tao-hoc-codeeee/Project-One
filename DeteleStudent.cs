@@ -164,7 +164,7 @@ namespace Delete_Students
 
             for(int i = 0; i < columnCount; i++)
             {
-                columnWidths[i] = table.Max(Row => Row[i].Length);
+                columnWidths[i] = table.Max(Row => Row[i].Length);//
             }
 
             foreach(var row in table)
