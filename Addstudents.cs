@@ -47,7 +47,7 @@ public class Addstudents : Studentsinfo
     {
         //Them ten hoc sinh
         Console.Write("Enter name:");
-        string name = Console.ReadLine() ?? "";
+        string name = Console.ReadLine() ?? "".TrimEnd(' ');
         return name;
     }
     public string ReStudents_no()
@@ -67,7 +67,7 @@ public class Addstudents : Studentsinfo
     {
         //Dien dia chi email
         Console.Write("Enter email_address:");
-        string email = Console.ReadLine() ?? "";
+        string email = Console.ReadLine() ?? "".TrimEnd(' ');
         int i = chekcmail(email);
         // check email
         if (i != 1)
@@ -93,7 +93,7 @@ public class Addstudents : Studentsinfo
     {
         //dien so dien thoai hs
         Console.Write("Enter phonenumber:");
-        string Phonenumber = Console.ReadLine() ?? "";
+        string Phonenumber = Console.ReadLine() ?? "".TrimEnd(' ');
         while (Phonenumber.Length != 10)
         {
             Console.WriteLine("Invalid phone number format. Please enter again!");
@@ -104,7 +104,7 @@ public class Addstudents : Studentsinfo
     {
         //dien gioi tinh
         Console.Write("Enter gender (enter F or M):");
-        string gender = Console.ReadLine() ?? "".ToUpper();
+        string gender = Console.ReadLine() ?? "".ToUpper().TrimEnd(' ');
         if (gender != "F" || gender != "M")
         {
             Console.WriteLine("Invalid gender. Please re-enter.");

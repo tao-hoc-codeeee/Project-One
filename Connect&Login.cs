@@ -24,18 +24,18 @@ public class LoginUI
         // đoạn này sẽ xóa sau khi xong các hàm bên trong 
         Console.WriteLine("\t\t\t\tLogin\t\t\t\t");
         Console.Write("Enter your ID :");
-        ID = Console.ReadLine() ?? "";
+        ID = Console.ReadLine() ?? "".TrimEnd(' ');
         Console.Write("Enter your password :");
-        string password = ReadPassword();
+        string password = ReadPassword().TrimEnd(' ');
 
         //Đăng nhập + xác minh tài khoản để sau dùng h xài cái trên cho tiện
         // do
         // {
         //     Console.WriteLine("\t\t\t\tLogin\t\t\t\t");
         //     Console.Write("Enter your ID :");
-        //     ID = Console.ReadLine() ?? "";
+        //     ID = Console.ReadLine() ?? "".TrimEnd(' ');
         //     Console.Write("Enter your password :");
-        //     string password = ReadPassword();
+        //     string password = ReadPassword().TrimEnd(' ');
 
         //     if(AuthenticateUser(ID,password))
         //     {
@@ -97,6 +97,6 @@ public class LoginUI
             return count > 0;
         }
 
-        // count lớn hơn 0 trả về true = 0 trả về false.
+        // count lớn hơn 0 trả về true = 0 trả về false(nếu sinh viên tồn tại nó sẽ trả về student id của sinh viên đó mặc định sẽ lớn hơn 0 nếu có tồn tại).
     }
 }

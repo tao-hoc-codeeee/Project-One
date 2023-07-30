@@ -36,7 +36,7 @@ public class MenuAdministrator
             Console.WriteLine("0. Exit.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");
-            j = Convert.ToInt32(Console.ReadLine());
+            j = Convert.ToInt32(Console.ReadLine()??"".TrimEnd(' '));
             switch (j)
             {
                 case 1:
@@ -67,7 +67,7 @@ public class MenuAdministrator
             Console.WriteLine("5 . Back.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");
-            j = Convert.ToInt32(Console.ReadLine());
+            j = Convert.ToInt32(Console.ReadLine()??"".TrimEnd(' '));
             switch (j)
             {
                 case 1:
