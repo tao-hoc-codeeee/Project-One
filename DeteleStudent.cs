@@ -21,10 +21,13 @@ namespace Delete_Students
             string studentNo = Console.ReadLine() ?? "".TrimEnd(' ');
             int choice;
             
+            try
+            {
+
+            
             if (AuthenticateStudent(studentNo))
             {
-                try
-                {
+                
                     int studentId = GetStudentId(studentNo);
                     Display_Student(studentId);
                     
@@ -45,15 +48,16 @@ namespace Delete_Students
                                 break;
                         }
                     } while (choice != 2);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error!" + ex.Message);
-                }
+                
             }
             else
             {
                 Console.WriteLine("Error!\n Not found Student please re-enter.");
+            }
+            }
+            catch
+            {
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
             }
         }
 
