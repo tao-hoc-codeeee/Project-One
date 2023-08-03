@@ -6,15 +6,19 @@ public class MenuLoginActivity
     public int j = -1;
     public void MenuLogin()
     {
-        // while(j!=0)
-        // {
-        LoginUI loginUI = new LoginUI();
-        loginUI.Login();
-        MenuAdministrator menuAdministrator = new MenuAdministrator();
-        menuAdministrator.Mainmenu();
-        //menuAdministrator.MenuUpdateStudent();
-        //Console.Clear();
-        //}
+        try
+        {
+            LoginUI loginUI = new LoginUI();
+            loginUI.Login();
+            MenuAdministrator menuAdministrator = new MenuAdministrator();
+            menuAdministrator.Mainmenu();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!" + ex.Message);
+        }
+
+
     }
 }
 
@@ -36,7 +40,7 @@ public class MenuAdministrator
             Console.WriteLine("0. Exit.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");
-            j = Convert.ToInt32(Console.ReadLine()??"".TrimEnd(' '));
+            j = Convert.ToInt32(Console.ReadLine() ?? "".TrimEnd(' '));
             switch (j)
             {
                 case 1:
@@ -67,7 +71,7 @@ public class MenuAdministrator
             Console.WriteLine("5 . Back.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");
-            j = Convert.ToInt32(Console.ReadLine()??"".TrimEnd(' '));
+            j = Convert.ToInt32(Console.ReadLine() ?? "".TrimEnd(' '));
             switch (j)
             {
                 case 1:
