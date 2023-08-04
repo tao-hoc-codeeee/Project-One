@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "ConsoleTableExt/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ConsoleTableExt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ConsoleTableExt.dll": {}
+        }
+      },
       "Google.Protobuf/3.21.9": {
         "type": "package",
         "compile": {
@@ -643,6 +652,20 @@
     }
   },
   "libraries": {
+    "ConsoleTableExt/3.2.0": {
+      "sha512": "IhaHj6R2vSbb781aRXngan6nKRp8R5rnL2X5fL0uRW2wRiFyCIUh81T/QOih0//PjzoXMk2Uv4ayBAGDLH338A==",
+      "type": "package",
+      "path": "consoletableext/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "consoletableext.3.2.0.nupkg.sha512",
+        "consoletableext.nuspec",
+        "lib/net35/ConsoleTableExt.dll",
+        "lib/net46/ConsoleTableExt.dll",
+        "lib/netstandard2.0/ConsoleTableExt.dll"
+      ]
+    },
     "Google.Protobuf/3.21.9": {
       "sha512": "OTpFujTgkmqMLbg3KT7F/iuKi1rg6s5FCS2M9XcVLDn40zL8wgXm37CY/F6MeOEXKjdcnXGCN/h7oyMkVydVsg==",
       "type": "package",
@@ -2039,7 +2062,12 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+<<<<<<< HEAD
       "MySql.Data >= 8.1.0",
+=======
+      "ConsoleTableExt >= 3.2.0",
+      "MySql.Data >= 8.0.33",
+>>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
       "Terminal.Gui >= 1.12.1"
     ]
   },
@@ -2082,6 +2110,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "ConsoleTableExt": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.1.0, )"
