@@ -4,11 +4,11 @@ using System.Net.Mail;
 using System.Text;
 using MySql.Data.MySqlClient;
 
-public class Addstudents : Studentsinfo
+public class Addstudents 
 {
-    public int year = 0;
-    public int day = 0;
-    public int month = 0;
+    // public int year = 0;
+    // public int day = 0;
+    // public int month = 0;
     // public Addstudents()
     // {
     //     name_of_student = "";
@@ -25,12 +25,16 @@ public class Addstudents : Studentsinfo
         Console.WriteLine("==========================================================");
         Console.WriteLine("----------------------Add New Student---------------------");
         Console.WriteLine("==========================================================");
-        Students_name = Entername();
-        Students_email = Enteremailaddress();
-        Students_phone = EnterphoneNumber();
-        Students_gender = Entergender();
-        Students_birthday = Enterbirthdate();
-        Students_no = EnterStudentno();
+        Students students = new Students();
+        students.Students_name = Entername();
+        students.Students_email = Enteremailaddress();
+        students.Students_phone = EnterphoneNumber();
+        students.Students_gender = Entergender();
+        //Students_birthday = Enterbirthdate();
+        students.Students_address = EnterAddress();
+        students.Students_no = EnterStudentno(students.Students_phone);
+        students.Student_password = RandomPassword();
+        Add_Student(students);
         Console.Write("Are you sure?(Enter Y or N):");
         string a = Console.ReadLine() ?? "".ToUpper();
         if (a == "Y")
@@ -56,12 +60,18 @@ public class Addstudents : Studentsinfo
         int number = a.Next(10, 99);
         return number.ToString();
     }
-    public string EnterStudentno()
+    public string EnterStudentno(string Students_phone)
     {
         //tao uid hoc sinh
         string no = ReStudents_no();
         string id = no + Students_phone;
         return id;
+    }
+    public string RandomPassword()
+    {
+        Random password = new Random();
+        int number = password.Next(100000,999999);
+        return number.ToString();
     }
     public string Enteremailaddress()
     {
@@ -93,8 +103,13 @@ public class Addstudents : Studentsinfo
     {
         //dien so dien thoai hs
         Console.Write("Enter phonenumber:");
+<<<<<<< HEAD
+        string Phonenumber = Console.ReadLine() ?? "";
+        if(Phonenumber.Length != 10)
+=======
         string Phonenumber = Console.ReadLine() ?? "".TrimEnd(' ');
         while (Phonenumber.Length != 10)
+>>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
         {
             Console.WriteLine("Invalid phone number format. Please enter again!");
         }
@@ -104,27 +119,87 @@ public class Addstudents : Studentsinfo
     {
         //dien gioi tinh
         Console.Write("Enter gender (enter F or M):");
+<<<<<<< HEAD
+        string gender = Console.ReadLine() ?? "".ToUpper();
+        if (gender != "F" || gender != "M" || gender != "f" || gender !="m")
+=======
         string gender = Console.ReadLine() ?? "".ToUpper().TrimEnd(' ');
         if (gender != "F" || gender != "M")
+>>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
         {
             Console.WriteLine("Invalid gender. Please re-enter.");
         }
         return gender;
     }
-    public DateTime Enterbirthdate()
+    public string EnterAddress()
     {
-        //dien ngay thang nam sinh
-        DateTime a = new DateTime();
-        Console.Write("Enter birthday:");
-        year = Convert.ToInt32(Console.ReadLine());
-        day = Convert.ToInt32(Console.ReadLine());
-        month = Convert.ToInt32(Console.ReadLine());
-        return a = new DateTime(year, month, day);
+        Console.Write("Enter address:");
+        string address = Console.ReadLine()??"";
+        return address;
     }
+    // public DateTime Enterbirthdate()
+    // {
+    //     //dien ngay thang nam sinh
+    //     DateTime a = new DateTime();
+    //     Console.Write("Enter birthday:");
+    //     year = Convert.ToInt32(Console.ReadLine());
+    //     day = Convert.ToInt32(Console.ReadLine());
+    //     month = Convert.ToInt32(Console.ReadLine());
+    //     return a = new DateTime(year, month, day);
+    // }
+    // public DateTime Enterbirthdate()
+    // {
+    //     DateTime a ;
+    //     Console.Write("Enter birthday:");
+    //     string? year = Console.ReadLine();
+    //     string? day = Console.ReadLine();
+    //     string? month = Console.ReadLine();
+    //     string[] time = year+day+month;
+    //     string[] formats = { "yyyyMMdd", "HHmmss" };
+    //     foreach (var time in time)
+    //     {
+    //         if (DateTime.TryParseExact(time, formats, null,
+    //                            System.Globalization.DateTimeStyles.AllowWhiteSpaces |
+    //                            System.Globalization.DateTimeStyles.AdjustToUniversal,
+    //                            out parsedDate))
+    //                            Console.WriteLine($"{time} --> {a:g}");
+    //                            a = {time} --> {a:g};
+    //         else
+    //         Console.WriteLine($"Cannot convert {time}");
+    //     }
+    //     return a;
+    // }
+        // public int checkday(int year, int month, int day)
+        // {
+        //     if(month == 2 && day >28)
+        //     {
+        //         return 1;
+        //     }
+        //     if(month == 2 && year % 4=0 && day >29)
+        //     {
+        //         return 1;
+        //     }
+        //     if(month == 1 || month == 3 || month == 5 || month == 7|| month ==8 || month == 10| month == 12 && day !=31)
+        //     {
+        //         return 1;
+        //     }
+        //     if(day > 32 || day <1)
+        //     {
+        //         return 1;
+        //     }
+        //     if(month >12 || month <1)
+        //     {
+        //         return 1;
+        //     }
+        //     if(month == 4 || month = 6 || month == 9 || month == 11 && day !=30)
+        //     {
+        //         return 1;
+        //     }
+        // }
 
 
     // thêm dữ liệu vào csdl
-    public static void Add_Student(string StudentNo, string Passwrod, string StudentName, string Gender, string PhoneNumber, string Email, DateTime BrithDate, string Address)
+    public static void Add_Student(Students students)
     {
         Console.OutputEncoding = Encoding.Unicode;
         Console.InputEncoding = Encoding.Unicode;
@@ -132,23 +207,30 @@ public class Addstudents : Studentsinfo
         // Kết nối đến cơ sở dữ liệu
         MySqlConnection connection = Connection.GetConnection();
 
-        // Tạo command để thực thi thủ tục lưu trữ
-        string StoredProcedure = "sp_AddStudent"; // ghi tên procedure ở đây
+        // Tạo command để thực thi thủ tục lưu trữ-
+        string StoredProcedure = "Addstudent"; // ghi tên procedure ở đây
         using(MySqlCommand command = new MySqlCommand(StoredProcedure,connection))
         {
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("",StudentNo);
-            command.Parameters.AddWithValue("",Passwrod);
-            command.Parameters.AddWithValue("",StudentName);
-            command.Parameters.AddWithValue("",Gender);
-            command.Parameters.AddWithValue("",PhoneNumber);
-            command.Parameters.AddWithValue("",Email);
-            command.Parameters.AddWithValue("",BrithDate);
-            command.Parameters.AddWithValue("",Address);
-
-
+            command.Parameters.AddWithValue("studentUID",students.Students_no);
+            command.Parameters["@studentUID"].Direction= System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("passwords",students.Student_password);
+            command.Parameters["@passwords"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("studentname",students.Students_name);
+            command.Parameters["@studentname"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("genderstudent",students.Students_name);
+            command.Parameters["@genderstudent"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("studentphone",students.Students_phone);
+            command.Parameters["@studentphone"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("emailstudent",students.Students_email);
+            command.Parameters["@emailstudent"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("birthdaystudent",students.Students_birthday);
+            command.Parameters["@birthdaystudent"].Direction = System.Data.ParameterDirection.Input;
+            command.Parameters.AddWithValue("studentaddress",students.Students_address);
+            command.Parameters["@studentaddress"].Direction = System.Data.ParameterDirection.Input;
+            Int32 recordsAffected = command.ExecuteNonQuery();
             // Thực thi thủ tục lưu trữ
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
             Console.WriteLine("successfully!");
         }
     }
