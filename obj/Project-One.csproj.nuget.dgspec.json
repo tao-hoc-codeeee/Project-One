@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj": {}
+    "C:\\Users\\Nhat\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj": {
+    "C:\\Users\\Nhat\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
+        "projectUniqueName": "C:\\Users\\Nhat\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
         "projectName": "Project-One",
-        "projectPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
-        "packagesPath": "C:\\Users\\Quan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Quan\\OneDrive\\Documents\\GitHub\\Project-One\\obj\\",
+        "projectPath": "C:\\Users\\Nhat\\OneDrive\\Documents\\GitHub\\Project-One\\Project-One.csproj",
+        "packagesPath": "C:\\Users\\Nhat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhat\\OneDrive\\Documents\\GitHub\\Project-One\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Quan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +42,7 @@
           "dependencies": {
             "MySql.Data": {
               "target": "Package",
-              "version": "[8.0.33, )"
+              "version": "[8.1.0, )"
             },
             "Terminal.Gui": {
               "target": "Package",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,7 +6,7 @@ class program
     {
         Console.BackgroundColor = ConsoleColor.DarkBlue;
         Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.Clear();
         MenuLoginActivity menuLoginActivity = new MenuLoginActivity();
         menuLoginActivity.MenuLogin();
