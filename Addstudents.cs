@@ -103,13 +103,8 @@ public class Addstudents
     {
         //dien so dien thoai hs
         Console.Write("Enter phonenumber:");
-<<<<<<< HEAD
         string Phonenumber = Console.ReadLine() ?? "";
         if(Phonenumber.Length != 10)
-=======
-        string Phonenumber = Console.ReadLine() ?? "".TrimEnd(' ');
-        while (Phonenumber.Length != 10)
->>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
         {
             Console.WriteLine("Invalid phone number format. Please enter again!");
         }
@@ -119,13 +114,8 @@ public class Addstudents
     {
         //dien gioi tinh
         Console.Write("Enter gender (enter F or M):");
-<<<<<<< HEAD
         string gender = Console.ReadLine() ?? "".ToUpper();
         if (gender != "F" || gender != "M" || gender != "f" || gender !="m")
-=======
-        string gender = Console.ReadLine() ?? "".ToUpper().TrimEnd(' ');
-        if (gender != "F" || gender != "M")
->>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
         {
             Console.WriteLine("Invalid gender. Please re-enter.");
         }
