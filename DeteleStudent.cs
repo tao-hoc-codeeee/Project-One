@@ -101,7 +101,10 @@ namespace Delete_Students
             }
         }
 
-        // hàm xóa sinh viên bằng cách truy vấn sql Storedprocedure dựa vào student id
+        /// <summary>
+        /// hàm xóa sinh viên bằng cách truy vấn sql Storedprocedure dựa vào student id
+        /// </summary>
+        /// <param name="student_id">studen id tương ứng trong StoredProcedure</param>
         public static void Delete_Students(int student_id)
         {
             MySqlConnection connection = Connection.GetConnection();
@@ -116,8 +119,12 @@ namespace Delete_Students
                 Console.WriteLine("Successfully!");
             }
         }
+        
 
-        // hàm hiển thị sinh viên bằng cách truy vấn sql Storedprocedure dựa vào student id
+        /// <summary>
+        /// hàm hiển thị sinh viên bằng cách truy vấn sql Storedprocedure dựa vào student id
+        /// </summary>
+        /// <param name="student_id">studen id tương ứng trong StoredProcedure</param>
         public static void Display_Student(int student_id)
         {
             Console.OutputEncoding = Encoding.Unicode;
@@ -127,7 +134,7 @@ namespace Delete_Students
             string StoredProcedure = "";
             MySqlCommand command = new MySqlCommand(StoredProcedure, connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("", student_id);// student id tương ứng trong storedProcedure
+            command.Parameters.AddWithValue("", student_id);
 
             MySqlDataReader reader = command.ExecuteReader();
 

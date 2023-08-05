@@ -78,6 +78,8 @@ public class MenuAdministrator
                     DeleteStudent deleteStudent = new DeleteStudent();  // Tạo đối tượng từ class DeleteStudent trong namespace Delete_Students
                     deleteStudent.Delete_Student();  // Gọi hàm Delete_Student từ đối tượng deleteStudent
                     break;
+                case 2:
+                    break;
                 case 3:
                     addstudents.Enterstudentinfo();
                     break;
