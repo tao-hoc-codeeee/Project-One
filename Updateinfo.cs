@@ -48,7 +48,6 @@ public class UpdateInfo
         Console.WriteLine("Enter emailaddress:");
         Console.WriteLine("Enter address:");
         Console.WriteLine("Enter phone number:");
-
         Console.WriteLine("Complete!");
     }
 
