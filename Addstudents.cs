@@ -30,7 +30,7 @@ public class Addstudents
         students.Students_email = Enteremailaddress();
         students.Students_phone = EnterphoneNumber();
         students.Students_gender = Entergender();
-        //Students_birthday = Enterbirthdate();
+        students.Students_birthday = Enterbirthdate();
         students.Students_address = EnterAddress();
         students.Students_no = EnterStudentno(students.Students_phone);
         students.Student_password = RandomPassword();
@@ -103,13 +103,8 @@ public class Addstudents
     {
         //dien so dien thoai hs
         Console.Write("Enter phonenumber:");
-<<<<<<< HEAD
-        string Phonenumber = Console.ReadLine() ?? "";
+        string Phonenumber = Console.ReadLine()?? "";
         if(Phonenumber.Length != 10)
-=======
-        string Phonenumber = Console.ReadLine() ?? "".TrimEnd(' ');
-        while (Phonenumber.Length != 10)
->>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
         {
             Console.WriteLine("Invalid phone number format. Please enter again!");
         }
@@ -119,16 +114,9 @@ public class Addstudents
     {
         //dien gioi tinh
         Console.Write("Enter gender (enter F or M):");
-<<<<<<< HEAD
-        string gender = Console.ReadLine() ?? "".ToUpper();
-        if (gender != "F" || gender != "M" || gender != "f" || gender !="m")
-=======
-        string gender = Console.ReadLine() ?? "".ToUpper().TrimEnd(' ');
-        if (gender != "F" || gender != "M")
->>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
-        {
-            Console.WriteLine("Invalid gender. Please re-enter.");
-        }
+        string gender = Console.ReadLine()?? "";
+        if (gender == "f" || gender =="F" ) gender = "Female";
+        if(gender == "M"|| gender =="m") gender = "Male";
         return gender;
     }
     public string EnterAddress()
@@ -137,67 +125,19 @@ public class Addstudents
         string address = Console.ReadLine()??"";
         return address;
     }
-    // public DateTime Enterbirthdate()
-    // {
-    //     //dien ngay thang nam sinh
-    //     DateTime a = new DateTime();
-    //     Console.Write("Enter birthday:");
-    //     year = Convert.ToInt32(Console.ReadLine());
-    //     day = Convert.ToInt32(Console.ReadLine());
-    //     month = Convert.ToInt32(Console.ReadLine());
-    //     return a = new DateTime(year, month, day);
-    // }
-    // public DateTime Enterbirthdate()
-    // {
-    //     DateTime a ;
-    //     Console.Write("Enter birthday:");
-    //     string? year = Console.ReadLine();
-    //     string? day = Console.ReadLine();
-    //     string? month = Console.ReadLine();
-    //     string[] time = year+day+month;
-    //     string[] formats = { "yyyyMMdd", "HHmmss" };
-    //     foreach (var time in time)
-    //     {
-    //         if (DateTime.TryParseExact(time, formats, null,
-    //                            System.Globalization.DateTimeStyles.AllowWhiteSpaces |
-    //                            System.Globalization.DateTimeStyles.AdjustToUniversal,
-    //                            out parsedDate))
-    //                            Console.WriteLine($"{time} --> {a:g}");
-    //                            a = {time} --> {a:g};
-    //         else
-    //         Console.WriteLine($"Cannot convert {time}");
-    //     }
-    //     return a;
-    // }
-        // public int checkday(int year, int month, int day)
-        // {
-        //     if(month == 2 && day >28)
-        //     {
-        //         return 1;
-        //     }
-        //     if(month == 2 && year % 4=0 && day >29)
-        //     {
-        //         return 1;
-        //     }
-        //     if(month == 1 || month == 3 || month == 5 || month == 7|| month ==8 || month == 10| month == 12 && day !=31)
-        //     {
-        //         return 1;
-        //     }
-        //     if(day > 32 || day <1)
-        //     {
-        //         return 1;
-        //     }
-        //     if(month >12 || month <1)
-        //     {
-        //         return 1;
-        //     }
-        //     if(month == 4 || month = 6 || month == 9 || month == 11 && day !=30)
-        //     {
-        //         return 1;
-        //     }
-        // }
-
-
+    public DateTime Enterbirthdate()
+    {
+        //dien ngay thang nam sinh
+        Console.Write("Enter birthday");
+        Console.WriteLine("Enter year :");
+        int year = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter day :");
+        int day = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter month:");
+        int month = int.Parse(Console.ReadLine());
+        DateTime a = new DateTime(year, month, day);
+        return a;
+    }
     // thêm dữ liệu vào csdl
     public static void Add_Student(Students students)
     {
@@ -218,7 +158,7 @@ public class Addstudents
             command.Parameters["@passwords"].Direction = System.Data.ParameterDirection.Input;
             command.Parameters.AddWithValue("studentname",students.Students_name);
             command.Parameters["@studentname"].Direction = System.Data.ParameterDirection.Input;
-            command.Parameters.AddWithValue("genderstudent",students.Students_name);
+            command.Parameters.AddWithValue("genderstudent",students.Students_gender);
             command.Parameters["@genderstudent"].Direction = System.Data.ParameterDirection.Input;
             command.Parameters.AddWithValue("studentphone",students.Students_phone);
             command.Parameters["@studentphone"].Direction = System.Data.ParameterDirection.Input;

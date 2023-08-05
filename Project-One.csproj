@@ -9,12 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-    <PackageReference Include="MySql.Data" Version="8.1.0" />
-=======
     <PackageReference Include="ConsoleTableExt" Version="3.2.0" />
     <PackageReference Include="MySql.Data" Version="8.0.33" />
->>>>>>> 4e4d9cbfd3195ed6b0d66b1fc4f5a07f6b0add47
     <PackageReference Include="Terminal.Gui" Version="1.12.1" />
   </ItemGroup>
 
