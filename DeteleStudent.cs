@@ -69,18 +69,18 @@ namespace Delete_Students
             // Kết nối đến cơ sở dữ liệu
             MySqlConnection connection = Connection.GetConnection();
             // Tạo command để thực thi thủ tục lưu trữ
-            string StoredProcedure = ""; // ghi tên procedure ở đây
+            string StoredProcedure = "sp_GetStudentId"; // ghi tên procedure ở đây
             using (MySqlCommand command = new MySqlCommand(StoredProcedure, connection))
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("", student_no); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
-                command.Parameters.Add("", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;  // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                command.Parameters.AddWithValue("@StudentNo", student_no); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
+                command.Parameters.Add("@StudentId", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;  // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
                 command.ExecuteNonQuery();
 
-                if (command.Parameters[""].Value != DBNull.Value) // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                if (command.Parameters["@StudentId"].Value != DBNull.Value) // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
                 {
-                    StudentId = Convert.ToInt32(command.Parameters[""].Value); // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                    StudentId = Convert.ToInt32(command.Parameters["@StudentId"].Value); // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
                 }
 
                 return StudentId;
@@ -90,10 +90,10 @@ namespace Delete_Students
         static bool AuthenticateStudent(string studentNo) // tìm kiếm xem mã student no đã nhập có tồn tại hay không
         {
             MySqlConnection connection = Connection.GetConnection();
-            string StoredProcedure = ""; //StoredProcedure tìm kiếm student no có tồn tại hay không 
+            string StoredProcedure = "sp_AuthenticateStudent"; //StoredProcedure tìm kiếm student no có tồn tại hay không 
             using (var command = new MySqlCommand(StoredProcedure, connection))
             {
-                command.Parameters.AddWithValue("", studentNo);
+                command.Parameters.AddWithValue("@UID", studentNo);
 
                 int count = Convert.ToInt32(command.ExecuteScalar());
 
@@ -105,12 +105,12 @@ namespace Delete_Students
         public static void Delete_Students(int student_id)
         {
             MySqlConnection connection = Connection.GetConnection();
-            string StoredProcedure = "";
+            string StoredProcedure = "sp_DeleteProduct";
             using (var command = new MySqlCommand(StoredProcedure, connection))
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("", student_id);
+                command.Parameters.AddWithValue("@productId", student_id);
 
                 command.ExecuteNonQuery();
                 Console.WriteLine("Successfully!");
@@ -143,7 +143,7 @@ namespace Delete_Students
                 string Name = reader.GetString("");  // Tương đối với name của bạn
                 string Class = reader.GetString("");
                 DateTime BirthDate = reader.GetDateTime("");
-                // Type enum của Gender chưa bt ghi thế nào nên sẽ ghi sau :)))
+                string Gender = reader.GetString("");
                 
                 
                 var row = new List<string>
@@ -152,7 +152,7 @@ namespace Delete_Students
                     Name,
                     Class,
                     BirthDate.ToString(),
-                    //ghi Gender ở đây
+                    Gender
                 };
 
                 table.Add(row);
