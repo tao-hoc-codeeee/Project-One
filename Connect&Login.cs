@@ -82,15 +82,15 @@ public class LoginUI
     }
 
     // hàm xác thực thông tin người dùng dựa vào csdl
-    static bool AuthenticateUser(string username, string password)
+    static bool AuthenticateUser(string studentNo, string password)
     {
 
         MySqlConnection connection = Connection.GetConnection();
-        string StoredProcedure = $"SELECT COUNT(*) FROM students WHERE student_no = @username AND password = @password";// sau sẽ đổi thành StoredProcedure
+        string StoredProcedure = "sp_AuthenticateUser";// sau sẽ đổi thành StoredProcedure
         using (var command = new MySqlCommand(StoredProcedure, connection))
         {
-            command.Parameters.AddWithValue("@username", username);
-            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@StudentNo", studentNo);
+            command.Parameters.AddWithValue("@Password", password);
 
             int count = Convert.ToInt32(command.ExecuteScalar());
 
