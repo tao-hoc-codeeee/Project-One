@@ -128,12 +128,12 @@ public class Addstudents
     public DateTime Enterbirthdate()
     {
         //dien ngay thang nam sinh
-        Console.Write("Enter birthday");
-        Console.WriteLine("Enter year :");
+        Console.WriteLine("Enter birthday.");
+        Console.Write("Enter year :");
         int year = int.Parse(Console.ReadLine());
-        Console.WriteLine("Enter day :");
+        Console.Write("Enter day :");
         int day = int.Parse(Console.ReadLine());
-        Console.WriteLine("Enter month:");
+        Console.Write("Enter month:");
         int month = int.Parse(Console.ReadLine());
         DateTime a = new DateTime(year, month, day);
         return a;
