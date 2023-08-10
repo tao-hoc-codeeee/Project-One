@@ -1,7 +1,6 @@
 using MySql.Data.MySqlClient;
 public class Connection
 {
-    //private string connectionString = "server=localhost;user id=root;password=nhatdo25;port=3306;database=StudentManagement1;";
     public static MySqlConnection GetConnection()
     {
         MySqlConnection myconnection = new MySqlConnection
@@ -13,6 +12,8 @@ public class Connection
     }
 }
 
+//@"server=localhost;user id=root;password=nguyenthequan305;port=3306;database=StudentManagement1;"
+//@"server=localhost;user id=root;password=nhatdo25;port=3306;database=StudentManagement1;"
 
 public class LoginUI
 {
