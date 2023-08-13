@@ -3,13 +3,11 @@ using Delete_Students;
 
 public class MenuLoginActivity
 {
-    public int j = -1;
+    public int j ;
     public void MenuLogin()
     {
         try
         {
-            LoginUI loginUI = new LoginUI();
-            loginUI.Login();
             MenuAdministrator menuAdministrator = new MenuAdministrator();
             menuAdministrator.Mainmenu();
         }
@@ -24,7 +22,7 @@ public class MenuLoginActivity
 
 public class MenuAdministrator
 {
-    public int j = -1;
+    public int j ;
     public Addstudents addstudents = new Addstudents();
     public void Mainmenu()
     {
@@ -35,8 +33,8 @@ public class MenuAdministrator
             Console.WriteLine("==========================================================");
             Console.WriteLine("-------------------Student Mananagement-------------------");
             Console.WriteLine("==========================================================");
-            Console.WriteLine("1. Display all data.");
-            Console.WriteLine("2. Update data.");
+            Console.WriteLine("1. Academic Transcript.");
+            Console.WriteLine("2. Update data Student.");
             Console.WriteLine("0. Exit.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");
