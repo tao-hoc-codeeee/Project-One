@@ -137,13 +137,28 @@ namespace Delete_Students
             var header = new List<string> { "Student No", "Name", "Class", "Brith Date", "Gender" };
             table.Add(header);
 
+            // Tính toán chiều dài tối đa của mỗi cột
+            int[] columnWidths = new int[header.Count];
+            for (int i = 0; i < header.Count; i++)
+            {
+                columnWidths[i] = header[i].Length;
+            }
+
+
             while (reader.Read())
             {
-                string StudentNo = reader.GetString("");// Student no tương úng trong StoredProcedure
-                string Name = reader.GetString("");  // Tương đối với name của bạn
-                string Class = reader.GetString("");
-                DateTime BirthDate = reader.GetDateTime("");
-                string Gender = reader.GetString("");
+                string StudentNo = reader.GetString("student_no");// Student no tương úng trong StoredProcedure
+                string Name = reader.GetString("student_name");  // Tương đối với name của bạn
+                string Class = reader.GetString("class_name");
+                DateTime BirthDate = reader.GetDateTime("birth_date");
+                string Gender = reader.GetString("gender");
+
+                // Cập nhật chiều dài tối đa của mỗi cột dựa trên dữ liệu mới
+                columnWidths[0] = Math.Max(columnWidths[0], StudentNo.Length);
+                columnWidths[1] = Math.Max(columnWidths[1], Name.Length);
+                columnWidths[2] = Math.Max(columnWidths[2], Class.Length);
+                columnWidths[3] = Math.Max(columnWidths[3], BirthDate.ToString().Length);
+                columnWidths[4] = Math.Max(columnWidths[4], Gender.Length);
                 
                 
                 var row = new List<string>
@@ -162,23 +177,40 @@ namespace Delete_Students
             connection.Close();
 
 
-            //hiển thị bảng
-            int columnCount = table[0].Count;
-            int[] columnWidths = new int[columnCount];
-
-            for(int i = 0; i < columnCount; i++)
+            // Thêm dấu " - " cho mỗi dòng
+            var separator = new List<string>();
+            for (int i = 0; i < header.Count; i++)
             {
-                columnWidths[i] = table.Max(Row => Row[i].Length);//
+                separator.Add(new string('-', columnWidths[i] + 2));
             }
 
-            foreach(var row in table)
+            // Hiển thị bảng
+            foreach (var row in table)
             {
-                for(int i = 0; i < columnCount; i++)
+                for (int i = 0; i < header.Count; i++)
                 {
-                    Console.Write(row[i].PadRight(columnWidths[i] + 2));
+                    Console.Write("| " + row[i].PadRight(columnWidths[i]) + " ");
                 }
-                Console.WriteLine();
+                Console.WriteLine("|");
+                if (row == header)
+                {
+                    Console.Write("+");
+                    foreach (var width in columnWidths)
+                    {
+                        Console.Write(new string('-', width + 2) + "+");
+                    }
+                    Console.WriteLine();
+                }
             }
+
+            // Dòng " - " cuối cùng
+            Console.Write("+");
+            foreach (var width in columnWidths)
+            {
+                Console.Write(new string('-', width + 2) + "+");
+            }
+            Console.WriteLine();
+
         }
 
     }
