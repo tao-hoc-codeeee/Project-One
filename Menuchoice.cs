@@ -33,8 +33,8 @@ public class MenuAdministrator
             Console.WriteLine("==========================================================");
             Console.WriteLine("-------------------Student Mananagement-------------------");
             Console.WriteLine("==========================================================");
-            Console.WriteLine("1. Academic Transcript.");
-            Console.WriteLine("2. Update data Student.");
+            Console.WriteLine("1. Update Academic Transcript Of Student.");
+            Console.WriteLine("2. Update Data Student.");
             Console.WriteLine("0. Exit.");
             Console.WriteLine("==========================================================");
             Console.Write("Your Choice: ");

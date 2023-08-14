@@ -127,7 +127,7 @@ namespace Delete_Students
             string StoredProcedure = "";
             MySqlCommand command = new MySqlCommand(StoredProcedure, connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("", student_id);// student id tương ứng trong storedProcedure
+            command.Parameters.AddWithValue("@StudentId", student_id);// student id tương ứng trong storedProcedure
 
             MySqlDataReader reader = command.ExecuteReader();
 
