@@ -170,7 +170,6 @@ public class Addstudents
             command.Parameters["@studentaddress"].Direction = System.Data.ParameterDirection.Input;
             Int32 recordsAffected = command.ExecuteNonQuery();
             // Thực thi thủ tục lưu trữ
-            //command.ExecuteNonQuery();
             Console.WriteLine("successfully!");
         }
     }
